@@ -1,0 +1,25 @@
+<h1>Student Data</h1>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Maths</th>
+        <th>Science</th>
+        <th>English</th>
+        <th>total</th>
+        <th>per</th>
+        <th>Content</th>
+    </tr>
+
+    {% for s in students %}
+    <tr>
+        <td>{{ s.name }}</td>
+        <td>{{ s.maths }}</td>
+        <td>{{ s.science }}</td>
+        <td>{{ s.english }}</td>
+        <td>{{ s.total }}</td>
+        <td>{{ s.percentage }}</td>
+        <td>{{ i.content|safe }}</td>
+    </tr>
+    {% endfor %}
+</table>

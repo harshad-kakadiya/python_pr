@@ -1,0 +1,15 @@
+from django.shortcuts import render
+
+# Create your views here.
+
+from django.http import HttpResponse
+
+def home(request):
+    return HttpResponse("Project working successfully")
+
+from django.shortcuts import render
+from .models import Student
+
+def student_list(request):
+    data = Student.objects.all().order_by('-percentage')
+    return render(request, 'student_list.html', {'students': data})
