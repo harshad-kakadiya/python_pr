@@ -11,5 +11,5 @@ from django.shortcuts import render
 from .models import Student
 
 def student_list(request):
-    data = Student.objects.all().order_by('-percentage')
-    return render(request, 'student_list.html', {'students': data})
+    students = Student.objects.all()
+    return render(request, 'student_list.html', {'students': students})

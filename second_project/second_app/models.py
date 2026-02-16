@@ -4,7 +4,6 @@ from tinymce.models import HTMLField
 
 class Student(models.Model):
     name = models.CharField(max_length=100)
-    maths = models.IntegerField()
     science = models.IntegerField()
     english = models.IntegerField()
     total = models.IntegerField(blank=True, null=True)
@@ -13,8 +12,9 @@ class Student(models.Model):
     content = HTMLField(blank=True, null=True)
 
 
+
     def save(self, *args, **kwargs):
-        self.total = self.maths + self.science + self.english
+        self.total = self.science + self.english
         self.percentage = self.total / 3
         super().save(*args, **kwargs)
 
